@@ -20,7 +20,7 @@ module RAM (din,
     wire [1:0] R_W;
     assign R_W = din[9:8];
     reg [7:0] currentAddress;
-
+    
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             dout     <= 0;
@@ -49,7 +49,7 @@ module RAM (din,
                     dout     <= MEM[currentAddress];
                     tx_valid <= 1;
                 end
-                default:
+                
             endcase
         end
     end
