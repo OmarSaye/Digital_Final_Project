@@ -47,7 +47,6 @@ module full_testbench ();
             @(negedge clk_tb);
             SS_n_tb = 0;
             CMD     = 2'b01;
-            @(negedge clk_tb)
             MOSI_tb = CMD[1];
             @(negedge clk_tb)
             MOSI_tb = CMD[0];
