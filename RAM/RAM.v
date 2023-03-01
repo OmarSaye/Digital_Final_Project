@@ -10,10 +10,10 @@ module RAM (din,
     output reg tx_valid;
     parameter MEM_DEPTH     = 256;
     parameter ADDR_SIZE     = 8;
-    parameter READ_ADDRESS  = 2'b00 ;
-    parameter READ_DATA     = 2'b01;
-    parameter WRITE_ADDRESS = 2'b10;
-    parameter WRITE_DATA    = 2'b11;
+    parameter WRITE_ADDRESS  = 2'b00 ;
+    parameter WRITE_DATA     = 2'b01;
+    parameter READ_ADDRESS = 2'b10;
+    parameter READ_DATA    = 2'b11;
     
     reg [7:0] MEM [MEM_DEPTH-1:0];
     
@@ -32,6 +32,7 @@ module RAM (din,
                     if (rx_valid) begin
                         currentAddress <= din[7:0];
                     end
+                    tx_valid <= 0;
                 end
                 WRITE_ADDRESS:begin
                     if (rx_valid) begin

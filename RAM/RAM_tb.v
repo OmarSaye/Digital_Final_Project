@@ -11,7 +11,7 @@ RAM dut(din_tb,clk,rstn_tb,rx_valid_tb,dout_dut,tx_valid_dut);
 initial begin
 	clk=0;
 	forever 
-	#1 clk=~clk;
+	#10 clk=~clk;
 end
 //stimulus generation 
 integer i;
@@ -24,19 +24,23 @@ rstn_tb=1;
 //fill RAM with data=address
 rx_valid_tb=1;
 for (i=0; i<256; i=i+1) begin
-dut.MEM[i]<=i;	
 @(negedge clk);
+dut.MEM[i]=i;	
 end	//for loop
 
+
+@(negedge clk);
+
+for (i=0; i<512; i=i+1) begin
 //read data check
 rx_valid_tb=0;
-for (i=0; i<512; i=i+1) begin
+
 if (i%2) begin //i odd.. read data
-din_tb[9:8]=2'b01;
+din_tb[9:8]=2'b11;
 din_tb[7:0]=$random; //it's dummy data
 end 
 else begin//i even..read address
-din_tb[9:8]=2'b00;
+din_tb[9:8]=2'b10;
 din_tb[7:0]=i/2; //so that we go through adresses one by one
 end
 @(negedge clk);
@@ -46,11 +50,11 @@ end	//for loop
 rx_valid_tb=1;
 for (i=0; i<512; i=i+1) begin
 if (i%2) begin //i odd.. read data
-din_tb[9:8]=2'b00;
+din_tb[9:8]=2'b11;
 din_tb[7:0]=$random; //it's dummy data
 end 
 else begin //i even..read address
-din_tb[9:8]=2'b01;
+din_tb[9:8]=2'b10;
 din_tb[7:0]=i/2; //so that we go through adresses one by one
 end 
 @(negedge clk);
@@ -62,21 +66,21 @@ end	//for loop
 rx_valid_tb=0;
 for(i=1; i<100; i=i+1) begin
 	if (i%4==1) begin   //1st.. random write addr
-        din_tb[9:8]=2'b10;
+        din_tb[9:8]=2'b00;
         x=$random;
         din_tb[7:0]=x; //random addr
     end  
     else if (i%4==2) begin     //2nd..random data to write
-    	din_tb[9:8]=2'b11;
+    	din_tb[9:8]=2'b01;
     	y=$random;
         din_tb[7:0]=y; //random data 
     end
     else if (i%4==3) begin //3rd..read from the random addr generated..x
-    	din_tb[9:8]=2'b00;
+    	din_tb[9:8]=2'b10;
         din_tb[7:0]=x;
     end
     else begin //read the random data
-    	din_tb[9:8]=2'b01;
+    	din_tb[9:8]=2'b11;
         din_tb[7:0]=$random; //dummy data
     end
     @(negedge clk);
@@ -84,26 +88,27 @@ end //for loop
 //expected: dout_dut=0, tx_valid_dut=0 ; because rx_valid=0
 rx_valid_tb=1;
 for(i=1; i<100; i=i+1) begin
+    rx_valid_tb=1;
 	if (i%4==1) begin   //1st.. random write addr
-        din_tb[9:8]=2'b10;
+        din_tb[9:8]=2'b00;
         x=$random;
         din_tb[7:0]=x; //random addr
     end  
     else if (i%4==2) begin     //2nd..random data to write
-    	din_tb[9:8]=2'b11;
+    	din_tb[9:8]=2'b01;
     	y=$random;
         din_tb[7:0]=y; //random data 
     end
     else if (i%4==3) begin //3rd..read from the random addr generated..x
-    	din_tb[9:8]=2'b00;
+    	din_tb[9:8]=2'b10;
         din_tb[7:0]=x;
     end
     else begin //read the random data
-    	din_tb[9:8]=2'b01;
+    	din_tb[9:8]=2'b11;
         din_tb[7:0]=$random; //dummy data
         //expected: dout_dut=y , tx_valid=1
     end
-@(negedge clk);
+    @(negedge clk);
 end //for loop
 
 @(negedge clk);
