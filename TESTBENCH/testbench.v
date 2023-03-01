@@ -1,4 +1,4 @@
-module moduleName ();
+module full_testbench ();
     reg MOSI_tb,SS_n_tb,rst_n_tb,clk_tb;
     wire MISO_tb;
     parameter clk_cycle = 30;
@@ -42,11 +42,11 @@ module moduleName ();
                 MOSI_tb = address[7-SPI_counter];
             end
             @(negedge clk_tb);
-            SS_n_tb=1;
+            SS_n_tb = 1;
             //sending Write data command
             @(negedge clk_tb);
-            SS_n_tb=0;
-            CMD = 2'b01;
+            SS_n_tb = 0;
+            CMD     = 2'b01;
             @(negedge clk_tb)
             MOSI_tb = CMD[1];
             @(negedge clk_tb)
@@ -88,11 +88,11 @@ module moduleName ();
                 MOSI_tb = address[7-SPI_counter];
             end
             @(negedge clk_tb);
-            SS_n_tb=1;
+            SS_n_tb = 1;
             //sending read data command
             CMD = 2'b11;
             @(negedge clk_tb);
-            SS_n_tb=0;
+            SS_n_tb = 0;
             MOSI_tb = CMD[1];
             @(negedge clk_tb)
             MOSI_tb = CMD[0];
@@ -103,16 +103,17 @@ module moduleName ();
             end
             //ending of writing process
             @(negedge clk_tb);
-            SS_n_tb=1;
-            if(receivedData!=receivedData)
-            $display("Testbench error !!!\n");
-            if (referanceData>= 253)
-                referanceData = 11;
-            else
-                referanceData =referanceData+11;
-                
-                //modifynig variables for next loop entry
+            SS_n_tb = 1;
+            if (receivedData!= receivedData)
+                $display("Testbench error !!!\n");
+                if (referanceData>= 253)
+                    referanceData = 11;
+                else
+                    referanceData = referanceData+11;
+            
+            //modifynig variables for next loop entry
             address = address+1;
         end
+        $stop;
     end
 endmodule
