@@ -60,7 +60,7 @@ module moduleName ();
             @(negedge clk_tb);
             SS_n_tb = 1;
             //modifying variables for next loop entry
-            if (data> = 253)
+            if (data>= 253)
                 data = 11;
             else
                 data    = data+11;
