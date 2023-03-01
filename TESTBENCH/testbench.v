@@ -31,13 +31,13 @@ module full_testbench ();
         $display("STARTING LOOP1 ... \n loop one will write 11,22,33....253,11,22,33...253...  in addresses 100,101,102...199 respectively \n \n");
         //trying to write at addresses sequentially data will be 11,22,33.....253,11,22,33...253...
         for(counter = 0;counter<100;counter = counter+1)begin
-            $dispaly("_________________________________________");
+            $display("_________________________________________");
             $display("\n itteration number %d \n",counter);
             @(negedge clk_tb)
             SS_n_tb = 0;
             //sending Write address command
             CMD     = 2'b00;
-            $dispaly("MOSI CMD = %b     enter write address cmd\n",CMD);
+            $display("MOSI CMD = %b     enter write address cmd\n",CMD);
             MOSI_tb = CMD[1];
             @(negedge clk_tb)
             MOSI_tb = CMD[0];
@@ -53,7 +53,7 @@ module full_testbench ();
             @(negedge clk_tb);
             SS_n_tb = 0;
             CMD     = 2'b01;
-            $dispaly("MOSI CMD = %b     write data cmd\n",CMD);
+            $display("MOSI CMD = %b     write data cmd\n",CMD);
             MOSI_tb = CMD[1];
             @(negedge clk_tb)
             MOSI_tb = CMD[0];
@@ -73,7 +73,7 @@ module full_testbench ();
                 data    = data+11;
                 address = address+1;
         end
-        display("           ***END OF LOOP1*** \n \n \n ");
+        $display("           ***END OF LOOP1*** \n \n \n ");
         //*******************************************************************************************//
         //  NOW DATA IS SUCCESSFULLY STORED INSIDE MEMORY. WE WILL RESTORE IT AND CHECK IF THERE IS   //
         //  ANY ERRORS AND DISPLAY THAT ERROR                                                        //
@@ -84,13 +84,13 @@ module full_testbench ();
         receivedData  = 0;
         $display("STARTING LOOP2 ... \n this loop will try to read from memory at addresses 100,101,102...199 ,\ncompare collected data from memory with refrance data and catch mismatches\n \n");
         for(counter = 0;counter<100;counter = counter+1)begin
-            $dispaly("_________________________________________");
+            $display("_________________________________________");
             $display("\n itteration number %d \n",counter);
             @(negedge clk_tb)
             SS_n_tb = 0;
             //sending Read address command
             CMD     = 2'b10;
-            $dispaly("MOSI CMD = %b     enter read address cmd\n",CMD);
+            $display("MOSI CMD = %b     enter read address cmd\n",CMD);
             MOSI_tb = CMD[1];
             @(negedge clk_tb);
             MOSI_tb = CMD[0];
@@ -118,7 +118,7 @@ module full_testbench ();
             //ending of reading process
             @(negedge clk_tb);
             SS_n_tb = 1;
-            if (receivedData!= receivedData)
+            if (receivedData!= referanceData)
                 $display("^^^^^^^^^^^^^^^^^^^^^^^^^^^^!!CATCHEDMISS MATCH!!^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n");
                 if (referanceData>= 253)
                     referanceData = 11;
@@ -128,7 +128,7 @@ module full_testbench ();
             //modifynig variables for next loop entry
             address = address+1;
         end
-        dispaly("__________________________________\n__________________________________\n                          STOP\n")
+        $display("__________________________________\n__________________________________\n                          STOP\n");
         $stop;
     end
 endmodule
