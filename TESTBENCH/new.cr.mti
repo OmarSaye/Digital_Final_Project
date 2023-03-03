@@ -1,0 +1,15 @@
+{E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/wrapper.v} {1 {vlog -work work {E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/wrapper.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module MEMORY_BLOCK_WRAPPER
+
+Top level modules:
+	MEMORY_BLOCK_WRAPPER
+
+} {} {}} {E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/RAM.v} {1 {vlog -work work {E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/RAM.v}
+Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+-- Compiling module RAM
+
+Top level modules:
+	RAM
+
+} {} {}}

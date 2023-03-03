@@ -35,11 +35,8 @@ module full_testbench ();
             $display("\n itteration number %d \n",counter);
             @(negedge clk_tb)
             SS_n_tb = 0;
-<<<<<<< HEAD
-            MOSI = 1'b1; //this bit moves the slave to WRITE DATA STATE
-=======
-            MOSI_tb    = 1'b1; //this bit moves the slave to WRITE DATA STATE
->>>>>>> cd19d5c29e230f29f37bd8bf400377b1e5d9a0ae
+            MOSI_tb = 1'b0; //this bit moves the slave to WRITE DATA STATE
+
             @(negedge clk_tb)
             //sending Write address command
             CMD                = 2'b00;
@@ -58,15 +55,9 @@ module full_testbench ();
             //sending Write data command
             @(negedge clk_tb);
             SS_n_tb = 0;
-<<<<<<< HEAD
-            MOSI=1'b0; //this bit moves the slave to READ DATA STATE
+            MOSI_tb=1'b0; //this bit moves the slave to READ DATA STATE
             @(negedge clk_tb)
             CMD     = 2'b01;
-=======
-            MOSI_tb    = 1'b1; //this bit moves the slave to WRITE DATA STATE
-            @(negedge clk_tb)
-            CMD                = 2'b01;
->>>>>>> cd19d5c29e230f29f37bd8bf400377b1e5d9a0ae
             $display("MOSI CMD = %b     write data cmd\n",CMD);
             MOSI_tb            = CMD[1];
             @(negedge clk_tb)
@@ -102,7 +93,7 @@ module full_testbench ();
             $display("\n itteration number %d \n",counter);
             @(negedge clk_tb)
             SS_n_tb = 0;
-            MOSI_tb    = 1'bs0; //this bit moves the slave to READ DATA STATE
+            MOSI_tb    = 1'b1; //this bit moves the slave to READ DATA STATE
             @(negedge clk_tb)
             //sending Read address command
             CMD                = 2'b10;
@@ -120,7 +111,7 @@ module full_testbench ();
             SS_n_tb = 1;
             @(negedge clk_tb);
             SS_n_tb = 0;
-            MOSI_tb    = 1'b0; //this bit moves the slave to READ DATA STATE
+            MOSI_tb    = 1'b1; //this bit moves the slave to READ DATA STATE
             @(negedge clk_tb)
             //sending read data command
             CMD     = 2'b11;
@@ -136,7 +127,7 @@ module full_testbench ();
             //ending of reading process
             @(negedge clk_tb);
             SS_n_tb = 1;
-            if (receivedData!= referanceData)
+            if (receivedData!== referanceData)
                 $display("^^^^^^^^^^^^^^^^^^^^^^^^^^^^!!MISSMATCH CAUGHT!!^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n");
                 if (referanceData>= 253)
                     referanceData = 11;
