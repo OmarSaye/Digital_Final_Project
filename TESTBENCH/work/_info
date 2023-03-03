@@ -5,140 +5,140 @@ cModel Technology
 Z0 dC:\Users\Osama\Desktop\kareem wassem digital electronics diploma\assignment3_fsm\question1
 vfull_testbench
 !i10b 1
-Z1 !s100 Ed?B21VCjh^0QTShA]5Pb0
-Z2 IQQ[bDa0YLKEm47P1Z85n21
-Z3 V6z`bX5[W:edh`P9`04bC:0
-Z4 dE:\youssef\engineering\courses\kareem wassem digital electronics diploma\final_project\Digital_Final_Project-main\Digital_Final_Project\TESTBENCH
-Z5 w1677705448
-Z6 8E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/testbench.v
-Z7 FE:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/testbench.v
+!s100 NYc]P[ET@kkHkCWEO;93R2
+I8fECYY2iaBPGKBkD^3I]U0
+Z1 V6z`bX5[W:edh`P9`04bC:0
+Z2 dE:\youssef\engineering\courses\kareem wassem digital electronics diploma\final_project\Digital_Final_Project-main\Digital_Final_Project\TESTBENCH
+w1677855222
+Z3 8E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/testbench.v
+Z4 FE:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/testbench.v
 L0 1
-Z8 OV;L;10.1d;51
+Z5 OV;L;10.1d;51
 r1
 !s85 0
 31
-!s108 1677705474.088000
+!s108 1677855227.351000
 !s107 E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/testbench.v|
-Z9 !s90 -reportprogress|300|-work|work|E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/testbench.v|
+Z6 !s90 -reportprogress|300|-work|work|E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/testbench.v|
 !s101 -O0
-Z10 o-work work -O0
+Z7 o-work work -O0
 vMEMORY_BLOCK_WRAPPER
-Z11 I0o6NGF2`VWiUa05OATJbB1
-Z12 VcF9lmPez:I96kS>XKNm]:1
-R4
-Z13 w1677692746
-Z14 8E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/wrapper.v
-Z15 FE:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/wrapper.v
+Z8 I0o6NGF2`VWiUa05OATJbB1
+Z9 VcF9lmPez:I96kS>XKNm]:1
+R2
+Z10 w1677692746
+Z11 8E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/wrapper.v
+Z12 FE:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/wrapper.v
 L0 1
-R8
+R5
 r1
 31
-Z16 !s90 -reportprogress|300|-work|work|E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/wrapper.v|
-R10
-Z17 n@m@e@m@o@r@y_@b@l@o@c@k_@w@r@a@p@p@e@r
-Z18 !s100 d0o?kzcDD<z7XlJ67nP4b1
-Z19 !s108 1677704993.109000
-Z20 !s107 E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/wrapper.v|
+Z13 !s90 -reportprogress|300|-work|work|E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/wrapper.v|
+R7
+Z14 n@m@e@m@o@r@y_@b@l@o@c@k_@w@r@a@p@p@e@r
+Z15 !s100 d0o?kzcDD<z7XlJ67nP4b1
+Z16 !s108 1677704993.109000
+Z17 !s107 E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/wrapper.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vmoduleName
-Z21 ICYWenV2698h?o:jXL<PJ@0
-Z22 V^jMTC8<0NV_I@D_gYi?062
+Z18 ICYWenV2698h?o:jXL<PJ@0
+Z19 V^jMTC8<0NV_I@D_gYi?062
+R2
+Z20 w1677680541
+R3
 R4
-Z23 w1677680541
-R6
-R7
 L0 1
-R8
+R5
 r1
 31
-R10
-Z24 nmodule@name
-Z25 !s100 jji9AX:H_^OV7ZKEfLNY;0
-Z26 !s108 1677680546.877000
-Z27 !s107 E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/testbench.v|
-R9
+R7
+Z21 nmodule@name
+Z22 !s100 jji9AX:H_^OV7ZKEfLNY;0
+Z23 !s108 1677680546.877000
+Z24 !s107 E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/TESTBENCH/testbench.v|
+R6
 !i10b 1
 !s85 0
 !s101 -O0
 vproject_RAM_tb
-Z28 Ij^SPkGCF^WnMdh3Y8n?Cc1
-Z29 VCZNA=g9^ZPo:SJK6QdiGk0
-R4
-Z30 w1677693236
-Z31 8E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM_tb.v
-Z32 FE:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM_tb.v
+Z25 Ij^SPkGCF^WnMdh3Y8n?Cc1
+Z26 VCZNA=g9^ZPo:SJK6QdiGk0
+R2
+Z27 w1677693236
+Z28 8E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM_tb.v
+Z29 FE:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM_tb.v
 L0 1
-R8
+R5
 r1
 31
-Z33 !s90 -reportprogress|300|-work|work|E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM_tb.v|
-R10
-Z34 nproject_@r@a@m_tb
-Z35 !s100 `jl[[?L`L8AYNSX<=G>SS1
-Z36 !s108 1677704993.524000
-Z37 !s107 E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM_tb.v|
+Z30 !s90 -reportprogress|300|-work|work|E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM_tb.v|
+R7
+Z31 nproject_@r@a@m_tb
+Z32 !s100 `jl[[?L`L8AYNSX<=G>SS1
+Z33 !s108 1677704993.524000
+Z34 !s107 E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM_tb.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vproject_SPI_slave
-Z38 IYna]7]E31SAoRKjGELb>L1
-Z39 Vo0k2ZmHGCEHCk10kL5f[U1
-R4
-Z40 w1677618832
-Z41 8E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI slave.v
-Z42 FE:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI slave.v
+Z35 IYna]7]E31SAoRKjGELb>L1
+Z36 Vo0k2ZmHGCEHCk10kL5f[U1
+R2
+Z37 w1677618832
+Z38 8E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI slave.v
+Z39 FE:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI slave.v
 L0 1
-R8
+R5
 r1
 31
-R10
-Z43 nproject_@s@p@i_slave
-Z44 !s100 <4<`=kXB4hmVj1DoINY7f2
-Z45 !s108 1677680742.174000
-Z46 !s107 E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI slave.v|
-Z47 !s90 -reportprogress|300|-work|work|E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI slave.v|
+R7
+Z40 nproject_@s@p@i_slave
+Z41 !s100 <4<`=kXB4hmVj1DoINY7f2
+Z42 !s108 1677680742.174000
+Z43 !s107 E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI slave.v|
+Z44 !s90 -reportprogress|300|-work|work|E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI slave.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vRAM
-Z48 !s100 ibh>D4kJ1m@1go2kD^20`0
-Z49 ISj@dg5FM=M<nLnEg7La0_1
-Z50 V;o^KdiGF>ofl[HBlg6z5e3
-R4
-R30
-Z51 8E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM.v
-Z52 FE:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM.v
+Z45 !s100 ibh>D4kJ1m@1go2kD^20`0
+Z46 ISj@dg5FM=M<nLnEg7La0_1
+Z47 V;o^KdiGF>ofl[HBlg6z5e3
+R2
+R27
+Z48 8E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM.v
+Z49 FE:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM.v
 L0 1
-R8
+R5
 r1
 31
-Z53 !s90 -reportprogress|300|-work|work|E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM.v|
-R10
-Z54 n@r@a@m
-Z55 !s108 1677704993.359000
-Z56 !s107 E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM.v|
+Z50 !s90 -reportprogress|300|-work|work|E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM.v|
+R7
+Z51 n@r@a@m
+Z52 !s108 1677704993.359000
+Z53 !s107 E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/RAM/RAM.v|
 !i10b 1
 !s85 0
 !s101 -O0
 vSPI_SLAVE_tb
-Z57 !s100 _[m8D];kOEL[c7PeTcZ4N3
-Z58 I_9?2g@oea]2ZiLdjJY?a22
-Z59 Vn6:_[_LdA5L[77PIfg3XI3
-R4
-Z60 w1677691913
-Z61 8E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI_SLAVE_tb.v
-Z62 FE:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI_SLAVE_tb.v
+Z54 !s100 _[m8D];kOEL[c7PeTcZ4N3
+Z55 I_9?2g@oea]2ZiLdjJY?a22
+Z56 Vn6:_[_LdA5L[77PIfg3XI3
+R2
+Z57 w1677691913
+Z58 8E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI_SLAVE_tb.v
+Z59 FE:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI_SLAVE_tb.v
 L0 1
-R8
+R5
 r1
 31
-Z63 !s90 -reportprogress|300|-work|work|E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI_SLAVE_tb.v|
-R10
-Z64 n@s@p@i_@s@l@a@v@e_tb
-Z65 !s108 1677704993.248000
-Z66 !s107 E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI_SLAVE_tb.v|
+Z60 !s90 -reportprogress|300|-work|work|E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI_SLAVE_tb.v|
+R7
+Z61 n@s@p@i_@s@l@a@v@e_tb
+Z62 !s108 1677704993.248000
+Z63 !s107 E:/youssef/engineering/courses/kareem wassem digital electronics diploma/final_project/Digital_Final_Project-main/Digital_Final_Project/SPI_SLAVE/SPI_SLAVE_tb.v|
 !i10b 1
 !s85 0
 !s101 -O0

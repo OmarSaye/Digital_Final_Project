@@ -35,16 +35,20 @@ module full_testbench ();
             $display("\n itteration number %d \n",counter);
             @(negedge clk_tb)
             SS_n_tb = 0;
+<<<<<<< HEAD
             MOSI = 1'b1; //this bit moves the slave to WRITE DATA STATE
+=======
+            MOSI_tb    = 1'b1; //this bit moves the slave to WRITE DATA STATE
+>>>>>>> cd19d5c29e230f29f37bd8bf400377b1e5d9a0ae
             @(negedge clk_tb)
             //sending Write address command
-            CMD     = 2'b00;
+            CMD                = 2'b00;
             $display("MOSI CMD = %b     enter write address cmd\n",CMD);
-            MOSI_tb = CMD[1];
+            MOSI_tb            = CMD[1];
             @(negedge clk_tb)
             MOSI_tb = CMD[0];
             //sending address to SPI
-            $display("Address TO MOSI= %d   |   %b \n",address,address);
+            $display("Address TO MOSI = %d   |   %b \n",address,address);
             for(SPI_counter = 0;SPI_counter<8;SPI_counter = SPI_counter+1)begin
                 @(negedge clk_tb)
                 MOSI_tb = address[7-SPI_counter];
@@ -54,15 +58,21 @@ module full_testbench ();
             //sending Write data command
             @(negedge clk_tb);
             SS_n_tb = 0;
+<<<<<<< HEAD
             MOSI=1'b0; //this bit moves the slave to READ DATA STATE
             @(negedge clk_tb)
             CMD     = 2'b01;
+=======
+            MOSI_tb    = 1'b1; //this bit moves the slave to WRITE DATA STATE
+            @(negedge clk_tb)
+            CMD                = 2'b01;
+>>>>>>> cd19d5c29e230f29f37bd8bf400377b1e5d9a0ae
             $display("MOSI CMD = %b     write data cmd\n",CMD);
-            MOSI_tb = CMD[1];
+            MOSI_tb            = CMD[1];
             @(negedge clk_tb)
             MOSI_tb = CMD[0];
             //sending data to SPI
-            $display("Data TO MOSI= %d   |   %b \n",data,data);
+            $display("Data TO MOSI = %d   |   %b \n",data,data);
             for(SPI_counter = 0;SPI_counter<8;SPI_counter = SPI_counter+1)begin
                 @(negedge clk_tb)
                 MOSI_tb = data[7-SPI_counter];
@@ -92,24 +102,28 @@ module full_testbench ();
             $display("\n itteration number %d \n",counter);
             @(negedge clk_tb)
             SS_n_tb = 0;
+            MOSI_tb    = 1'bs0; //this bit moves the slave to READ DATA STATE
+            @(negedge clk_tb)
             //sending Read address command
-            CMD     = 2'b10;
+            CMD                = 2'b10;
             $display("MOSI CMD = %b     enter read address cmd\n",CMD);
-            MOSI_tb = CMD[1];
+            MOSI_tb            = CMD[1];
             @(negedge clk_tb);
             MOSI_tb = CMD[0];
             //sending address to SPI
-            $display("Address TO MOSI= %d   |   %b \n",address,address);
+            $display("Address TO MOSI = %d   |   %b \n",address,address);
             for(SPI_counter = 0;SPI_counter<8;SPI_counter = SPI_counter+1)begin
                 @(negedge clk_tb);
                 MOSI_tb = address[7-SPI_counter];
             end
             @(negedge clk_tb);
             SS_n_tb = 1;
-            //sending read data command
-            CMD = 2'b11;
             @(negedge clk_tb);
             SS_n_tb = 0;
+            MOSI_tb    = 1'b0; //this bit moves the slave to READ DATA STATE
+            @(negedge clk_tb)
+            //sending read data command
+            CMD     = 2'b11;
             MOSI_tb = CMD[1];
             @(negedge clk_tb)
             MOSI_tb = CMD[0];
@@ -118,12 +132,12 @@ module full_testbench ();
                 @(negedge clk_tb)
                 receivedData[7-SPI_counter] = MISO_tb;
             end
-            $display("collected data from memory= %d    |   %b       VS     referance data = %d  |   %b\n",receivedData,receivedData,referanceData,referanceData);
+            $display("collected data from memory = %d    |   %b       VS     referance data = %d  |   %b\n",receivedData,receivedData,referanceData,referanceData);
             //ending of reading process
             @(negedge clk_tb);
             SS_n_tb = 1;
             if (receivedData!= referanceData)
-                $display("^^^^^^^^^^^^^^^^^^^^^^^^^^^^!!CATCHEDMISS MATCH!!^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n");
+                $display("^^^^^^^^^^^^^^^^^^^^^^^^^^^^!!MISSMATCH CAUGHT!!^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n");
                 if (referanceData>= 253)
                     referanceData = 11;
                 else
