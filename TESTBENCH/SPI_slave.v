@@ -28,7 +28,7 @@ reg addr_or_data;
 always @(rst_n or cs) begin
     if (!rst_n)begin
         addr_or_data = 1; //default
-        MISO_done    = 1;
+      
     end
     
     if (cs == READ_ADD || cs == READ_DATA)
@@ -91,7 +91,11 @@ always @(rst_n or cs) begin
     
     //OUTPUT LOGIC
     always @(posedge clk) begin
-        //serial input from master via MOSI to parallel ouput to RAM via rx_data through a temp reg
+        if(!rst_n)
+        begin
+              MISO_done    = 1;
+        end else begin
+              //serial input from master via MOSI to parallel ouput to RAM via rx_data through a temp reg
         //no communication
         if (SS_n) begin
             MOSI_count <= 0;
@@ -130,6 +134,8 @@ always @(rst_n or cs) begin
             MISO_temp <= tx_data;
             MISO_done <= 0;
         end 
+        end
+      
     
 end
 endmodule
