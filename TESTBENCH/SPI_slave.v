@@ -96,8 +96,8 @@ always @(rst_n or cs) begin
         if (SS_n) begin
             MOSI_count <= 0;
             MOSI_done  <= 0;
-            MISO_done  <= 1;
-            MISO_count <= 0;
+           
+
         end
         //communication
         else begin
@@ -127,6 +127,9 @@ always @(rst_n or cs) begin
         if (!MISO_done && MISO_count<8 && cs == READ_DATA && (MOSI_count>= 10||MOSI_done)) begin
             MISO       <= MISO_temp[7-MISO_count]; //output LSB 1st
             MISO_count <= MISO_count+1;
+        end else if(SS_n) begin
+            MISO_count <=0;
+             MISO_done  <= 1;
         end
     
 end
