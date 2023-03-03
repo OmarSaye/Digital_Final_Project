@@ -22,16 +22,18 @@ module SPI_SLAVE_tb ();
         rst_n_tb    = 0;
         tx_valid_tb = 0;
         SS_n_tb     = 1;
-        #5
+        #5;
         rst_n_tb = 1;
         //NEXT LOOP TRY TO ACT AS SPI MASTER SENDING DATA TO SLAVE
         for (i = 0;i<100 ;i = i+1) begin
             //wrapping the word to send to spi slave {CMD[1],CMD[0],address}
             temp_1 = {1'b0,1'b1,8'b11111111};
-            //sending data to MOSI (SERIAL)
-            for (counter = 0; counter<10; counter = counter+1) begin
-                @(negedge clk_tb)
+          //sending data to MOSI (SERIAL)
+            @(negedge clk_tb)
                 SS_n_tb = 0;
+                MOSI_tb=0;
+            for (counter = 0; counter<10; counter = counter+1) begin
+                @(negedge clk_tb);
                 MOSI_tb = temp_1[9-counter];
             end
             //returning to IDILE state
@@ -44,13 +46,26 @@ module SPI_SLAVE_tb ();
             temp_1 = {1'b1,1'b0,i};
             @(negedge clk_tb);
             SS_n_tb    = 0;
+            MOSI_tb=1;
             tx_data_tb = temp_1;
             //tx_valid signal tell SPI that data is ready to be sent to the master
             tx_valid_tb = 1;
+            @(negedge clk_tb);
+            SS_n_tb=1;
+            tx_valid_tb=0;
+
+            temp_1 = {1'b1,1'b1,i};
+            @(negedge clk_tb);
+            MOSI_tb=1;
+            SS_n_tb    = 0;
+            tx_data_tb = temp_1;
+            //tx_valid signal tell SPI that data is ready to be sent to the master
+            tx_valid_tb = 1;
+
             //NEXT LOOP SENDING RECIEVED DATA FROM RAM TO SPI MASTER
             for (counter = 0; counter<10; counter = counter+1) begin
                 @(negedge clk_tb);
-                tx_valid_tb       = 0;
+                tx_valid_tb=0;
                 temp_2[9-counter] = MISO_tb;
             end
             @(negedge clk_tb);
