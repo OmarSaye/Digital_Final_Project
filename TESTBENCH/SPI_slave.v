@@ -16,7 +16,6 @@ module project_SPI_slave #(parameter IDLE = 3'b000,
     reg [2:0] cs,ns;
     
                            //serial to parallel and vice versa
-    reg [10:0] MOSI_temp;  //to save serial data recieved from MOSI and send it to RAM in parallel MOSI
     reg [3:0] MOSI_count;  //to count received bits from master ..10 bits
     reg MOSI_done;
     reg [7:0] MISO_temp;  //to save parallel data recieved from RAM and send it serially to MISO
@@ -103,7 +102,7 @@ module project_SPI_slave #(parameter IDLE = 3'b000,
             //communication
             else begin
                                               //MOSI_count starts with 0 and is supposed to stop at 9
-            MOSI_temp[10-MOSI_count] <= MOSI; //MSB is recived 1st
+            rx_data[10-MOSI_count] <= MOSI; //MSB is recived 1st
             MOSI_count               <= MOSI_count+1;
             if (MOSI_count == 10) begin
                 MOSI_done <= 1;
@@ -123,20 +122,21 @@ module project_SPI_slave #(parameter IDLE = 3'b000,
     always @ (posedge clk) begin
         //master done sending addr(read or write) OR data(write)
         if (MOSI_done) begin
-            rx_data  <= MOSI_temp[9:0];
             rx_valid <= 1;
         end
-        else
+        else begin
             rx_valid <= 0;
-            //tx_data recieved from RAM at output "MISO" serially
-            if (!MISO_done && MISO_count<8 && cs==READ_DATA) begin
-                MISO       <= MISO_temp[7-MISO_count]; //output LSB 1st
-                MISO_count <= MISO_count+1;
-            end
-            else
-			begin
-				MISO_count <= 0;
-			end
+        end
+
+        //tx_data recieved from RAM at output "MISO" serially
+        if (!MISO_done && MISO_count<8 && cs==READ_DATA && MOSI_done) begin
+        MISO       <= MISO_temp[7-MISO_count]; //output LSB 1st
+        MISO_count <= MISO_count+1;
+        end
+        else
+		begin
+		MISO_count <= 0;
+		end
                 
     end
 endmodule

@@ -118,6 +118,11 @@ module full_testbench ();
             MOSI_tb = CMD[1];
             @(negedge clk_tb)
             MOSI_tb = CMD[0];
+
+            for(SPI_counter = 0;SPI_counter<9;SPI_counter = SPI_counter+1)begin
+                @(negedge clk_tb)
+                MOSI_tb = 1;
+            end
             //reciving data from SPI
             for(SPI_counter = 0;SPI_counter<8;SPI_counter = SPI_counter+1)begin
                 @(negedge clk_tb)
