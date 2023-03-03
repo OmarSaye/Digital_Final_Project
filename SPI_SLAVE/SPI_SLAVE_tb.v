@@ -27,8 +27,8 @@ module SPI_SLAVE_tb ();
         //NEXT LOOP TRY TO ACT AS SPI MASTER SENDING DATA TO SLAVE
         for (i = 0;i<100 ;i = i+1) begin
             //wrapping the word to send to spi slave {CMD[1],CMD[0],address}
-            temp_1 = {1'b0,1'b1,i};
-            //sending data to MOSI (SERIAL)
+            temp_1 = {1'b0,1'b1,8'b11111111};
+          //sending data to MOSI (SERIAL)
             @(negedge clk_tb)
                 SS_n_tb = 0;
                 MOSI_tb=0;
