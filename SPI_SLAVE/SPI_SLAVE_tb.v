@@ -8,7 +8,7 @@ module SPI_SLAVE_tb ();
     reg [7:0] i;
     integer counter;
     
-    SPI_SLAVE DUT(.MOSI(MOSI_tb),.SS_n(SS_n_tb), .clk(clk_tb), .rst_n(rst_n_tb), .tx_valid(tx_valid_tb), .tx_data(tx_data_tb), .MISO(MISO_tb), .rx_valid(rx_valid_tb), .rx_data(rx_data_tb));
+    project_SPI_slave DUT(.MOSI(MOSI_tb),.SS_n(SS_n_tb), .clk(clk_tb), .rst_n(rst_n_tb), .tx_valid(tx_valid_tb), .tx_data(tx_data_tb), .MISO(MISO_tb), .rx_valid(rx_valid_tb), .rx_data(rx_data_tb));
     
     initial begin
         clk_tb = 0;
@@ -27,9 +27,9 @@ module SPI_SLAVE_tb ();
         //NEXT LOOP TRY TO ACT AS SPI MASTER SENDING DATA TO SLAVE
         for (i = 0;i<100 ;i = i+1) begin
             //wrapping the word to send to spi slave {CMD[1],CMD[0],address}
-            temp_1 = {1'b0,1'b1,i};
+            temp_1 = {1'b0,1'b1,8'b11111111};
             //sending data to MOSI (SERIAL)
-            for (counter = 0; i<10; i = i+1) begin
+            for (counter = 0; counter<10; counter = counter+1) begin
                 @(negedge clk_tb)
                 SS_n_tb = 0;
                 MOSI_tb = temp_1[9-counter];
