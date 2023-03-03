@@ -129,7 +129,7 @@ module project_SPI_slave #(parameter IDLE = 3'b000,
         end
 
         //tx_data recieved from RAM at output "MISO" serially
-        if (!MISO_done && MISO_count<8 && cs==READ_DATA && MOSI_done) begin
+        if (!MISO_done && MISO_count<8 && cs==READ_DATA && (MOSI_count>=10||MOSI_done)) begin
         MISO       <= MISO_temp[7-MISO_count]; //output LSB 1st
         MISO_count <= MISO_count+1;
         end

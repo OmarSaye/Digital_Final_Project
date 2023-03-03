@@ -119,7 +119,7 @@ module full_testbench ();
             @(negedge clk_tb)
             MOSI_tb = CMD[0];
 
-            for(SPI_counter = 0;SPI_counter<9;SPI_counter = SPI_counter+1)begin
+            for(SPI_counter = 0;SPI_counter<8;SPI_counter = SPI_counter+1)begin
                 @(negedge clk_tb)
                 MOSI_tb = 1;
             end
