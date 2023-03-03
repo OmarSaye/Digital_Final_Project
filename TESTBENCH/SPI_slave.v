@@ -108,13 +108,7 @@ always @(rst_n or cs) begin
             MOSI_done <= 1;
         end
         end
-        //RAM sent read data
-        if (tx_valid) begin
-            MISO_temp <= tx_data;
-            MISO_done <= 0;
-            
-            
-        end
+      
         
         //master done sending addr(read or write) OR data(write)
         if (MOSI_done) begin
@@ -124,13 +118,18 @@ always @(rst_n or cs) begin
             rx_valid <= 0;
         end
         //tx_data recieved from RAM at output "MISO" serially
+        
         if (!MISO_done && MISO_count<8 && cs == READ_DATA && (MOSI_count>= 10||MOSI_done)) begin
             MISO       <= MISO_temp[7-MISO_count]; //output LSB 1st
             MISO_count <= MISO_count+1;
         end else if(SS_n) begin
             MISO_count <=0;
              MISO_done  <= 1;
-        end
+        end else   //RAM sent read data
+        if (tx_valid) begin
+            MISO_temp <= tx_data;
+            MISO_done <= 0;
+        end 
     
 end
 endmodule
