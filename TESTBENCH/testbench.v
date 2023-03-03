@@ -35,6 +35,8 @@ module full_testbench ();
             $display("\n itteration number %d \n",counter);
             @(negedge clk_tb)
             SS_n_tb = 0;
+            MOSI = 1'b1; //this bit moves the slave to WRITE DATA STATE
+            @(negedge clk_tb)
             //sending Write address command
             CMD     = 2'b00;
             $display("MOSI CMD = %b     enter write address cmd\n",CMD);
@@ -52,6 +54,8 @@ module full_testbench ();
             //sending Write data command
             @(negedge clk_tb);
             SS_n_tb = 0;
+            MOSI=1'b0; //this bit moves the slave to READ DATA STATE
+            @(negedge clk_tb)
             CMD     = 2'b01;
             $display("MOSI CMD = %b     write data cmd\n",CMD);
             MOSI_tb = CMD[1];
