@@ -90,10 +90,10 @@ always @(rst_n or cs) begin
         endcase
     
     //OUTPUT LOGIC
-    always @(posedge clk) begin
+    always @(posedge clk or negedge rst_n) begin
         if(!rst_n)
         begin
-              MISO_done    = 1;
+              MISO_done    = 1; 
         end else begin
               //serial input from master via MOSI to parallel ouput to RAM via rx_data through a temp reg
         //no communication

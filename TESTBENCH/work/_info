@@ -5,11 +5,11 @@ cModel Technology
 Z0 dE:\youssef\engineering\courses\kareem wassem digital electronics diploma\final_project\Digital_Final_Project-main\Digital_Final_Project\TESTBENCH
 vfull_testbench
 !i10b 1
-Z1 !s100 5d=24KYS[EVoSo2U^n7PK2
-Z2 IW;zbnDE]zXzg@a<8Sn=g50
+Z1 !s100 am1af6O:OEYTN4zk_P=XA2
+Z2 I7AT>Q1^iaTkZhd8nLCU5^3
 Z3 V6z`bX5[W:edh`P9`04bC:0
 Z4 dE:\youssef\engineering\courses\kareem wassem digital electronics diploma\final_project\Digital_Final_Project-main\Digital_Final_Project\TESTBENCH
-Z5 w1677861343
+Z5 w1677879950
 Z6 8testbench.v
 Z7 Ftestbench.v
 L0 1
@@ -17,7 +17,7 @@ Z8 OV;L;10.1d;51
 r1
 !s85 0
 31
-Z9 !s108 1677862850.733000
+Z9 !s108 1678049367.200000
 Z10 !s107 wrapper.v|testbench.v|SPI_slave.v|RAM.v|
 Z11 !s90 -reportprogress|300|RAM.v|SPI_slave.v|testbench.v|wrapper.v|
 !s101 -O0
@@ -28,7 +28,7 @@ Z12 !s100 =UBS4?e2Kff@o^IQ4@ECz2
 Z13 In5R6V3iE[e_l]3F4[^ZnU1
 Z14 VcF9lmPez:I96kS>XKNm]:1
 R4
-Z15 w1677854258
+Z15 w1677874667
 Z16 8wrapper.v
 Z17 Fwrapper.v
 L0 1
@@ -44,11 +44,11 @@ o-O0
 Z18 n@m@e@m@o@r@y_@b@l@o@c@k_@w@r@a@p@p@e@r
 vproject_SPI_slave
 !i10b 1
-!s100 `=AaOHfn>6@la;lV4eOW21
-I]6TFT^WoZifo<^_eAgOL^3
+!s100 KTnQSVm5@`R5Q<HnJRP:`3
+I3Z532CW2ei?C3M^^GTISE2
 Z19 Vo0k2ZmHGCEHCk10kL5f[U1
 R4
-w1677862841
+w1678049344
 Z20 8SPI_slave.v
 Z21 FSPI_slave.v
 L0 2
@@ -68,9 +68,9 @@ Z23 !s100 [Q4ZGmI5LW>Tf2J9Zn3690
 Z24 IeUzHKo02WgC;GiWLW4oGA2
 Z25 V]<0GFhTLJL2S^i<hS;hVJ2
 R4
-R15
-Z26 8RAM.v
-Z27 FRAM.v
+Z26 w1677878453
+Z27 8RAM.v
+Z28 FRAM.v
 L0 1
 R8
 r1
@@ -81,4 +81,4 @@ R10
 R11
 !s101 -O0
 o-O0
-Z28 n@r@a@m
+Z29 n@r@a@m
